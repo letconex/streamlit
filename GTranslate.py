@@ -5,7 +5,7 @@ import requests
 sourceLang = st.text_input("Enter source language:")
 sourceLang = st.selectbox('Select source language', ('de', 'en', 'ro'))
 targetLang = st.text_input("Enter target language:")
-targetLang = st.selectbox('Select source language', ('de', 'en', 'ro'))
+targetLang = st.selectbox('Select target language', ('de', 'en', 'ro'))
 sourceText = st.text_input("Enter text to translate:")
 url = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=" + sourceLang + "&tl=" + targetLang + "&dt=t&q=" + sourceText
 response = requests.get(url)
