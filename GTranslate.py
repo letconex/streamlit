@@ -1,12 +1,13 @@
 import streamlit as st
 import requests
-langs = ('de', 'en', 'ro')
+slangs = ('de', 'en', 'ro')
+tlangs = ('ro', 'de', 'en')
 # sourceLang = "de"
 # targetLang = "ro"
 # sourceLang = st.text_input("Enter source language:")
-sourceLang = st.selectbox('Select source language', langs)
+sourceLang = st.selectbox('Select source language', slangs)
 # targetLang = st.text_input("Enter target language:")
-targetLang = st.selectbox('Select target language', langs)
+targetLang = st.selectbox('Select target language', tlangs)
 sourceText = st.text_input("Enter text to translate:")
 url = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=" + sourceLang + "&tl=" + targetLang + "&dt=t&q=" + sourceText
 response = requests.get(url)
