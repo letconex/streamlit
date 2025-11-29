@@ -18,5 +18,5 @@ if st.button('Translate'):
   # st.write(result)
   st.success(result)
 
-import datetime as dt
-st.write(f"Now is {dt.now()}")
+import datetime
+st.write(f"Today is datetime.date.today(), time: {datetime.datetime.now()}")
