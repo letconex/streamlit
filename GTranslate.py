@@ -19,4 +19,4 @@ if st.button('Translate'):
   st.success(result)
 
 import datetime
-st.write(f"Today is {datetime.date.today()}, time: {datetime.datetime.now()}")
+st.write(f"Today is {datetime.date.today()}, time: {datetime.datetime.utcnow()}")
