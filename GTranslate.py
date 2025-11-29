@@ -1,5 +1,5 @@
 import streamlit as st
-import requests
+import httpx
 slangs = ('de', 'en', 'ro')
 tlangs = ('ro', 'de', 'en')
 # sourceLang = "de"
@@ -10,7 +10,7 @@ sourceLang = st.selectbox('Select source language', slangs)
 targetLang = st.selectbox('Select target language', tlangs)
 sourceText = st.text_input("Enter text to translate:")
 url = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=" + sourceLang + "&tl=" + targetLang + "&dt=t&q=" + sourceText
-response = requests.get(url)
+response = httpx.get(url)
 if st.button('Translate'):
   result = response.text
   indexx = result.index('","')
@@ -18,5 +18,5 @@ if st.button('Translate'):
   # st.write(result)
   st.success(result)
 
-#import datetime as dt
-#st.write(f"Now is {now}")
+import datetime as dt
+st.write(f"Now is {now}")
